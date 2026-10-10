@@ -1,209 +1,188 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GUJARAT TAXI HUB</title>
+
 <style>
-:root{--yellow:#ffd52a;--bg:#090909;--card:#171717;--muted:#bdbdbd}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:white;font-family:Arial,sans-serif}
-header{position:sticky;top:0;z-index:5;background:#090909;border-bottom:1px solid #333;padding:18px 4%;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.logo{font-size:clamp(18px,4vw,27px);font-weight:900;color:var(--yellow);text-decoration:none}
-.btn{display:inline-block;background:var(--yellow);color:#111;padding:14px 18px;border-radius:12px;font-weight:bold;text-decoration:none;border:0;cursor:pointer}
-main{max-width:1100px;margin:auto;padding:24px 16px}
-h1{text-align:center;font-size:clamp(28px,6vw,44px);margin-bottom:10px}
-.intro{text-align:center;color:var(--muted);line-height:1.6;margin:0 auto 28px;max-width:650px}
-h2{font-size:27px}
-.cars{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-.car{background:var(--card);border:1px solid #333;border-radius:22px;overflow:hidden;display:flex;flex-direction:column}
-.photo{height:190px;background:#252525;display:flex;align-items:center;justify-content:center;text-align:center;padding:18px}
-.photo a{color:var(--yellow);font-weight:bold;line-height:1.6}
-.carbody{padding:18px;display:flex;flex-direction:column;flex:1}
-.car h3{font-size:22px;line-height:1.4;margin:4px 0 10px}
-.car p{color:var(--muted);line-height:1.6;flex:1}
-.model{font-size:13px;color:var(--yellow);margin:0 0 12px}
-.select{width:100%;background:transparent;border:2px solid var(--yellow);color:var(--yellow);border-radius:12px;padding:14px;font-size:17px;font-weight:bold;cursor:pointer}
-.note{color:#ccc;background:#1a1a1a;border:1px solid #333;border-radius:12px;padding:14px;line-height:1.6;margin:22px 0}
-form{background:#151515;border:1px solid #333;border-radius:18px;padding:20px;margin-top:32px}
-form h2{margin-top:0}
-label{display:block;margin:14px 0 7px}
-input,select,textarea{width:100%;padding:14px;border-radius:10px;border:1px solid #555;background:#090909;color:white;font-size:16px}
-textarea{min-height:90px}
-.submit{width:100%;margin-top:18px;font-size:17px}
-footer{text-align:center;color:#aaa;padding:28px 16px;border-top:1px solid #333;margin-top:30px}
-@media(max-width:600px){main{padding:20px 12px}.cars{gap:12px}.photo{height:150px;padding:10px}.carbody{padding:13px}.car h3{font-size:18px}.car p{font-size:14px}.select{padding:12px 5px;font-size:15px}header{padding:14px 12px}.btn{padding:12px;font-size:14px}}
-</style>
-</head>
-<body>
-<header>
-<a class="logo" href="#">GUJARAT TAXI HUB</a>
-<a class="btn" href="#booking">Book a Ride</a>
-</header>
-
-<main>
-<h1>Choose Your Ride</h1>
-<p class="intro">Comfortable taxi options for local rides, airport transfers, outstation trips and group travel across Gujarat.</p>
-
-<div class="cars">
-<article class="car">
-<div class="photo"><a href="https://www.marutisuzuki.com/tour/wagonr" target="_blank" rel="noopener">🇮🇳<br>WagonR Tour H3<br>View official photos ↗</a></div>
-<div class="carbody">
-<h3>WagonR / Hatchback</h3>
-<p>Compact choice for everyday and small-family travel.</p>
-<div class="model">Indian model: Maruti Suzuki WagonR</div>
-<button class="select" onclick="choose('WagonR / Hatchback')">Select Vehicle</button>
-</div>
-</article>
-
-<article class="car">
-<div class="photo"><a href="https://www.marutisuzuki.com/tour/dzire" target="_blank" rel="noopener">🇮🇳<br>Dzire Tour S<br>View official photos ↗</a></div>
-<div class="carbody">
-<h3>Dzire / Sedan</h3>
-<p>A comfortable option for city, airport and outstation rides.</p>
-<div class="model">Indian model: Maruti Suzuki Dzire Tour S</div>
-<button class="select" onclick="choose('Dzire / Sedan')">Select Vehicle</button>
-</div>
-</article>
-
-<article class="car">
-<div class="photo"><a href="https://www.marutisuzuki.com/tour/ertiga" target="_blank" rel="noopener">🇮🇳<br>Ertiga Tour M<br>View official photos ↗</a></div>
-<div class="carbody">
-<h3>Ertiga / Innova / SUV-MUV</h3>
-<p>Family travel with extra seating and luggage space.</p>
-<div class="model">Indian model: Maruti Suzuki Ertiga Tour M</div>
-<button class="select" onclick="choose('Ertiga / Innova / SUV-MUV')">Select Vehicle</button>
-</div>
-</article>
-
-<article class="car">
-<div class="photo"><a href="https://www.google.com/search?tbm=isch&q=Force+Traveller+India+passenger+van" target="_blank" rel="noopener">🇮🇳<br>Force Traveller<br>View Indian vehicle photos ↗</a></div>
-<div class="carbody">
-<h3>Force Traveller</h3>
-<p>For group trips, tours and larger families.</p>
-<div class="model">Indian model: Force Traveller</div>
-<button class="select" onclick="choose('Force Traveller')">Select Vehicle</button>
-</div>
-</article>
-
-<article class="car">
-<div class="photo"><a href="https://www.google.com/search?tbm=isch&q=India+luxury+taxi+Mercedes+BMW+car" target="_blank" rel="noopener">🇮🇳<br>Luxury Cars in India<br>View vehicle photos ↗</a></div>
-<div class="carbody">
-<h3>Luxury Car</h3>
-<p>Premium travel for business trips and special occasions.</p>
-<div class="model">Model and availability confirmed on booking</div>
-<button class="select" onclick="choose('Luxury Car')">Select Vehicle</button>
-</div>
-</article>
-
-<article class="car">
-<div class="photo"><a href="https://www.google.com/search?tbm=isch&q=Indian+mini+bus+tourist+bus" target="_blank" rel="noopener">🇮🇳<br>Indian Mini Bus<br>View vehicle photos ↗</a></div>
-<div class="carbody">
-<h3>Mini Bus / Bus</h3>
-<p>Group journeys, events, weddings and tours.</p>
-<div class="model">Actual bus type confirmed on booking</div>
-<button class="select" onclick="choose('Mini Bus / Bus')">Select Vehicle</button>
-</div>
-</article>
-</div>
-
-<p class="note"><strong>Vehicle photo notice:</strong> Official and reference photos help you identify the vehicle category. The actual vehicle model, colour and availability will be confirmed before your booking is finalised.</p>
-
-<form id="booking">
-<h2>Book Your Ride</h2>
-
-<label for="name">Your Name</label>
-<input id="name" required placeholder="Enter your name">
-
-<label for="phone">Mobile Number</label>
-<input id="phone" required type="tel" inputmode="tel" placeholder="Enter mobile number">
-
-<label for="vehicle">Choose Vehicle</label>
-<select id="vehicle" required>
-<option value="">Select a vehicle</option>
-<option>WagonR / Hatchback</option>
-<option>Dzire / Sedan</option>
-<option>Ertiga / Innova / SUV-MUV</option>
-<option>Force Traveller</option>
-<option>Luxury Car</option>
-<option>Mini Bus / Bus</option>
-</select>
-
-<label for="from">Pickup City</label>
-<input id="from" list="cities" required placeholder="Start typing a Gujarat city">
-<label for="to">Destination City</label>
-<input id="to" list="cities" required placeholder="Enter destination">
-<datalist id="cities">
-<option value="Ahmedabad"><option value="Rajkot">
-<option value="Surat"><option value="Vadodara">
-<option value="Gandhinagar"><option value="Bhavnagar">
-<option value="Jamnagar"><option value="Junagadh">
-<option value="Morbi"><option value="Gandhidham">
-<option value="Dwarka"><option value="Somnath">
-<option value="Porbandar"><option value="Anand">
-<option value="Nadiad"><option value="Mehsana">
-<option value="Bhuj"><option value="Palanpur">
-<option value="Amreli"><option value="Botad">
-</datalist>
-
-<label for="date">Travel Date</label>
-<input id="date" type="date" required>
-
-<label for="message">Extra Details (optional)</label>
-<textarea id="message" placeholder="Passengers, luggage, return trip, etc."></textarea>
-
-<button class="btn submit" type="submit">Continue on WhatsApp</button>
-</form>
-</main>
-
-<footer>
-GUJARAT TAXI HUB<br>
-Ride Easy. Travel Freely.
-</footer>
-
-<script>
-const whatsappNumber = "918469982615";
-
-function choose(vehicle) {
-  document.getElementById("vehicle").value = vehicle;
-  document.getElementById("booking").scrollIntoView({behavior:"smooth"});
+:root {
+  --yellow: #ffd52a;
+  --black: #090909;
+  --card: #161616;
+  --muted: #bdbdbd;
 }
 
-const dateInput = document.getElementById("date");
-const today = new Date();
-dateInput.min = [
-  today.getFullYear(),
-  String(today.getMonth()+1).padStart(2,"0"),
-  String(today.getDate()).padStart(2,"0")
-].join("-");
+* {
+  box-sizing: border-box;
+}
 
-document.getElementById("booking").addEventListener("submit", function(e) {
-  e.preventDefault();
+body {
+  margin: 0;
+  background: var(--black);
+  color: white;
+  font-family: Arial, sans-serif;
+}
 
-  const name = document.getElementById("name").value.trim();
-  const phone = document.getElementById("phone").value.trim();
-  const vehicle = document.getElementById("vehicle").value;
-  const from = document.getElementById("from").value.trim();
-  const to = document.getElementById("to").value.trim();
-  const date = document.getElementById("date").value;
-  const message = document.getElementById("message").value.trim();
+header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: #090909;
+  border-bottom: 1px solid #333;
+  padding: 15px 4%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
 
-  const text =
-    "GUJARAT TAXI HUB - Ride Booking Inquiry\n\n" +
-    "Name: " + name + "\n" +
-    "Mobile: " + phone + "\n" +
-    "Vehicle: " + vehicle + "\n" +
-    "Pickup: " + from + "\n" +
-    "Destination: " + to + "\n" +
-    "Travel Date: " + date + "\n" +
-    "Details: " + (message || "Not provided");
+.logo {
+  font-size: clamp(17px, 3.8vw, 26px);
+  font-weight: 900;
+  color: var(--yellow);
+  text-decoration: none;
+}
 
-  window.open(
-    "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(text),
-    "_blank"
-  );
-});
-</script>
-</body>
-</html>
+.btn {
+  background: var(--yellow);
+  color: #111;
+  border: 0;
+  border-radius: 12px;
+  padding: 14px 17px;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 24px 16px;
+}
+
+.eyebrow {
+  color: var(--yellow);
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: clamp(30px, 5vw, 44px);
+  margin: 8px 0;
+}
+
+.intro {
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.cars {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.car {
+  background: var(--card);
+  border: 1px solid #333;
+  border-radius: 20px;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.photo {
+  height: 190px;
+  position: relative;
+  background: #242424;
+  overflow: hidden;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.view {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background: #050505e8;
+  border: 1px solid #777;
+  color: white;
+  border-radius: 24px;
+  padding: 9px 12px;
+  cursor: pointer;
+}
+
+.fallback {
+  display: none;
+  position: absolute;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px;
+  color: white;
+  background: #242424;
+  font-weight: bold;
+}
+
+.carbody {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  min-height: 210px;
+}
+
+h2 {
+  font-size: 21px;
+  line-height: 1.35;
+  margin: 0 0 8px;
+}
+
+.desc {
+  color: var(--muted);
+  line-height: 1.55;
+  flex: 1;
+}
+
+.model {
+  font-size: 13px;
+  color: var(--yellow);
+  margin-bottom: 13px;
+}
+
+.select {
+  background: transparent;
+  border: 2px solid var(--yellow);
+  border-radius: 12px;
+  color: var(--yellow);
+  font-size: 15px;
+  font-weight: bold;
+  padding: 13px 8px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.note {
+  margin: 20px 0;
+  background: #181818;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 13px;
+  color: #ccc;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+form {
+  margin-top: 28px;
+  background: #131313;
+  border: 1px solid #
