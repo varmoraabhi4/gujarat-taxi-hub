@@ -3,414 +3,207 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#090909">
-<title>Gujarat Taxi Hub | Book a Taxi</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GUJARAT TAXI HUB</title>
 <style>
-:root{--yellow:#ffd429;--bg:#090909;--panel:#151515;--border:#303030}
+:root{--yellow:#ffd52a;--bg:#090909;--card:#171717;--muted:#bdbdbd}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:#fff;font-family:Arial,sans-serif;line-height:1.5}
-button,input,select{font:inherit}
-button{cursor:pointer}
-.container{width:min(1100px,92%);margin:auto}
-header{position:sticky;top:0;z-index:20;background:#090909f5;border-bottom:1px solid var(--border)}
-.nav{min-height:70px;display:flex;justify-content:space-between;align-items:center;gap:12px}
-.logo{font-size:19px;font-weight:900}.logo span{color:var(--yellow)}
-.btn{display:inline-block;border:0;border-radius:9px;padding:12px 16px;background:var(--yellow);color:#111;font-weight:800;text-align:center}
-.hero{padding:65px 0;background:linear-gradient(90deg,#000e,#0009),url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80') center/cover}
-.eyebrow{color:var(--yellow);font-size:12px;font-weight:800;letter-spacing:3px;text-transform:uppercase}
-h1{font-size:clamp(38px,7vw,64px);line-height:1.08;margin:14px 0}
-h1 span{color:var(--yellow)}
-.hero p,.muted{color:#bbb}
-.section{padding:48px 0}
-h2{font-size:clamp(27px,5vw,36px);margin:6px 0}
-.panel{background:var(--panel);border:1px solid var(--border);border-radius:15px;padding:20px}
-.form-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
-.field{position:relative;min-width:0}
-label{display:block;font-size:13px;margin-bottom:6px;color:#ddd}
-input,select{width:100%;min-height:46px;padding:10px;background:#090909;color:#fff;border:1px solid #444;border-radius:8px}
-.suggestions{display:none;position:absolute;z-index:30;top:100%;left:0;right:0;max-height:220px;overflow:auto;background:#222;border:1px solid #555;border-radius:8px}
-.suggestions button{display:block;width:100%;padding:11px;text-align:left;color:white;background:#222;border:0;border-bottom:1px solid #383838}
-.suggestions button:hover{background:#39321a}
-.wide{width:100%;margin-top:16px;min-height:48px}
-.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:25px}
-.card{min-width:0;overflow:hidden;background:var(--panel);border:1px solid var(--border);border-radius:13px}
-.card.selected{border:2px solid var(--yellow)}
-.photo{height:190px;position:relative;background:#242424;overflow:hidden;cursor:pointer}
-.photo img{width:100%;height:100%;display:block;object-fit:cover}
-.photo span{position:absolute;right:9px;bottom:9px;background:#000c;border:1px solid #777;border-radius:20px;padding:5px 9px;font-size:12px}
-.card-body{padding:15px}
-.card h3{font-size:17px;margin:0 0 6px}
-.card p{font-size:13px;color:#bbb;min-height:39px;margin:6px 0 13px}
-.card-actions{display:flex;align-items:center;justify-content:space-between;gap:8px}
-.select-vehicle{padding:9px 10px;border:1px solid var(--yellow);border-radius:7px;background:transparent;color:var(--yellow);font-weight:700}
-.card.selected .select-vehicle{background:var(--yellow);color:#111}
-.note{font-size:12px;color:#aaa;margin-top:17px}
-.features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.feature{padding:18px;background:#141414;border:1px solid var(--border);border-radius:12px}
-.feature strong{display:block;color:var(--yellow);margin-bottom:6px}
-footer{text-align:center;padding:25px 0;border-top:1px solid var(--border);color:#aaa;font-size:13px}
-.modal{display:none;position:fixed;inset:0;z-index:100;background:#000e;padding:14px;align-items:center;justify-content:center}
-.modal.open{display:flex}
-.modal-box{width:min(720px,100%);background:#171717;border:1px solid #444;border-radius:14px;overflow:hidden}
-.modal-head{display:flex;align-items:center;justify-content:space-between;padding:12px 15px}
-.modal-head h3{margin:0}
-.close{width:40px;height:40px;border-radius:50%;border:1px solid #555;background:#292929;color:white;font-size:24px}
-.gallery-img{display:block;width:100%;height:min(50vh,400px);object-fit:contain;background:#050505}
-.gallery-controls{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;padding:13px}
-.gallery-controls button:not(.btn){padding:10px;background:#292929;color:white;border:1px solid #555;border-radius:8px}
-#galleryCount{color:#bbb;font-size:13px}
-#status{display:none;padding:10px;color:var(--yellow);background:#282313;border-radius:8px;margin-top:12px}
-@media(max-width:720px){
- .form-grid{grid-template-columns:1fr 1fr}
- .cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
- .photo{height:145px}.card-body{padding:11px}
- .card h3{font-size:15px}.card p{font-size:12px;min-height:55px}
- .card-actions{align-items:stretch;flex-direction:column}
- .select-vehicle{width:100%}.features{grid-template-columns:1fr}
-}
-@media(max-width:430px){
- .form-grid{grid-template-columns:1fr}
- .logo{font-size:15px}.nav .btn{padding:10px;font-size:13px}
- .photo{height:120px}
-}
+body{margin:0;background:var(--bg);color:white;font-family:Arial,sans-serif}
+header{position:sticky;top:0;z-index:5;background:#090909;border-bottom:1px solid #333;padding:18px 4%;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-size:clamp(18px,4vw,27px);font-weight:900;color:var(--yellow);text-decoration:none}
+.btn{display:inline-block;background:var(--yellow);color:#111;padding:14px 18px;border-radius:12px;font-weight:bold;text-decoration:none;border:0;cursor:pointer}
+main{max-width:1100px;margin:auto;padding:24px 16px}
+h1{text-align:center;font-size:clamp(28px,6vw,44px);margin-bottom:10px}
+.intro{text-align:center;color:var(--muted);line-height:1.6;margin:0 auto 28px;max-width:650px}
+h2{font-size:27px}
+.cars{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.car{background:var(--card);border:1px solid #333;border-radius:22px;overflow:hidden;display:flex;flex-direction:column}
+.photo{height:190px;background:#252525;display:flex;align-items:center;justify-content:center;text-align:center;padding:18px}
+.photo a{color:var(--yellow);font-weight:bold;line-height:1.6}
+.carbody{padding:18px;display:flex;flex-direction:column;flex:1}
+.car h3{font-size:22px;line-height:1.4;margin:4px 0 10px}
+.car p{color:var(--muted);line-height:1.6;flex:1}
+.model{font-size:13px;color:var(--yellow);margin:0 0 12px}
+.select{width:100%;background:transparent;border:2px solid var(--yellow);color:var(--yellow);border-radius:12px;padding:14px;font-size:17px;font-weight:bold;cursor:pointer}
+.note{color:#ccc;background:#1a1a1a;border:1px solid #333;border-radius:12px;padding:14px;line-height:1.6;margin:22px 0}
+form{background:#151515;border:1px solid #333;border-radius:18px;padding:20px;margin-top:32px}
+form h2{margin-top:0}
+label{display:block;margin:14px 0 7px}
+input,select,textarea{width:100%;padding:14px;border-radius:10px;border:1px solid #555;background:#090909;color:white;font-size:16px}
+textarea{min-height:90px}
+.submit{width:100%;margin-top:18px;font-size:17px}
+footer{text-align:center;color:#aaa;padding:28px 16px;border-top:1px solid #333;margin-top:30px}
+@media(max-width:600px){main{padding:20px 12px}.cars{gap:12px}.photo{height:150px;padding:10px}.carbody{padding:13px}.car h3{font-size:18px}.car p{font-size:14px}.select{padding:12px 5px;font-size:15px}header{padding:14px 12px}.btn{padding:12px;font-size:14px}}
 </style>
 </head>
-
 <body>
 <header>
- <div class="container nav">
-  <a class="logo" href="#">GUJARAT <span>TAXI HUB</span></a>
-  <a class="btn" href="#booking">Book a Ride</a>
- </div>
+<a class="logo" href="#">GUJARAT TAXI HUB</a>
+<a class="btn" href="#booking">Book a Ride</a>
 </header>
 
 <main>
-<section class="hero">
- <div class="container">
-  <div class="eyebrow">Your journey, our priority</div>
-  <h1>Ride Easy.<br><span>Travel Freely.</span></h1>
-  <p>Book local taxis, outstation rides, family vehicles and group travel across Gujarat.</p>
-  <a class="btn" href="#booking">Plan Your Journey →</a>
- </div>
-</section>
+<h1>Choose Your Ride</h1>
+<p class="intro">Comfortable taxi options for local rides, airport transfers, outstation trips and group travel across Gujarat.</p>
 
-<section class="container section" id="booking">
- <div class="eyebrow">Quick booking</div>
- <h2>Where are you going?</h2>
- <p class="muted">Enter your trip details and contact us on WhatsApp.</p>
+<div class="cars">
+<article class="car">
+<div class="photo"><a href="https://www.marutisuzuki.com/tour/wagonr" target="_blank" rel="noopener">🇮🇳<br>WagonR Tour H3<br>View official photos ↗</a></div>
+<div class="carbody">
+<h3>WagonR / Hatchback</h3>
+<p>Compact choice for everyday and small-family travel.</p>
+<div class="model">Indian model: Maruti Suzuki WagonR</div>
+<button class="select" onclick="choose('WagonR / Hatchback')">Select Vehicle</button>
+</div>
+</article>
 
- <form class="panel" id="rideForm">
-  <div class="form-grid">
-   <div class="field">
-    <label for="pickup">Pickup City *</label>
-    <input id="pickup" placeholder="Type a city name" autocomplete="off" required>
-    <div class="suggestions" id="pickupList"></div>
-   </div>
-   <div class="field">
-    <label for="destination">Destination City *</label>
-    <input id="destination" placeholder="Type a city name" autocomplete="off" required>
-    <div class="suggestions" id="destinationList"></div>
-   </div>
-   <div class="field">
-    <label for="date">Travel Date *</label>
-    <input id="date" type="date" required>
-   </div>
-   <div class="field">
-    <label for="time">Pickup Time *</label>
-    <input id="time" type="time" required>
-   </div>
-   <div class="field">
-    <label for="passengers">Passengers</label>
-    <select id="passengers">
-     <option>1 passenger</option><option>2 passengers</option>
-     <option selected>3 passengers</option><option>4 passengers</option>
-     <option>5 passengers</option><option>6 passengers</option>
-     <option>7 passengers</option><option>8 passengers</option>
-     <option>9+ passengers</option>
-    </select>
-   </div>
-   <div class="field">
-    <label for="trip">Trip Type</label>
-    <select id="trip">
-     <option>One Way</option><option>Round Trip</option>
-     <option>Local Rental</option><option>Airport Transfer</option>
-    </select>
-   </div>
-   <div class="field">
-    <label for="vehicle">Vehicle Choice *</label>
-    <select id="vehicle" required>
-     <option value="">Choose a vehicle</option>
-     <option>WagonR / Hatchback</option>
-     <option>Dzire / Sedan</option>
-     <option>Ertiga / Innova / SUV-MUV</option>
-     <option>Force Traveller</option>
-     <option>Luxury Car</option>
-     <option>Mini Bus / Bus</option>
-    </select>
-   </div>
-  </div>
-  <button class="btn wide" type="submit">Send Booking Inquiry on WhatsApp</button>
-  <div id="status" role="status"></div>
-  <p class="note">Fare and vehicle availability will be confirmed by the operator.</p>
- </form>
-</section>
+<article class="car">
+<div class="photo"><a href="https://www.marutisuzuki.com/tour/dzire" target="_blank" rel="noopener">🇮🇳<br>Dzire Tour S<br>View official photos ↗</a></div>
+<div class="carbody">
+<h3>Dzire / Sedan</h3>
+<p>A comfortable option for city, airport and outstation rides.</p>
+<div class="model">Indian model: Maruti Suzuki Dzire Tour S</div>
+<button class="select" onclick="choose('Dzire / Sedan')">Select Vehicle</button>
+</div>
+</article>
 
-<section class="container section" id="vehicles">
- <div class="eyebrow">Find your ride</div>
- <h2>Choose Your Ride</h2>
- <p class="muted">Tap a photo to view the gallery. Select the vehicle you prefer.</p>
+<article class="car">
+<div class="photo"><a href="https://www.marutisuzuki.com/tour/ertiga" target="_blank" rel="noopener">🇮🇳<br>Ertiga Tour M<br>View official photos ↗</a></div>
+<div class="carbody">
+<h3>Ertiga / Innova / SUV-MUV</h3>
+<p>Family travel with extra seating and luggage space.</p>
+<div class="model">Indian model: Maruti Suzuki Ertiga Tour M</div>
+<button class="select" onclick="choose('Ertiga / Innova / SUV-MUV')">Select Vehicle</button>
+</div>
+</article>
 
- <!-- Cards are written directly in HTML so they remain visible if gallery JavaScript fails. -->
- <div class="cards">
-  <article class="card" data-vehicle="WagonR / Hatchback" data-gallery="0">
-   <div class="photo" tabindex="0" role="button" aria-label="View hatchback photos">
-    <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=900&q=80" alt="Hatchback-style car" loading="eager">
-    <span>▣ View photos</span>
-   </div>
-   <div class="card-body"><h3>WagonR / Hatchback</h3><p>Compact choice for everyday and small-family travel.</p><div class="card-actions"><small>Compact car</small><button class="select-vehicle" type="button">Select Vehicle</button></div></div>
-  </article>
+<article class="car">
+<div class="photo"><a href="https://www.google.com/search?tbm=isch&q=Force+Traveller+India+passenger+van" target="_blank" rel="noopener">🇮🇳<br>Force Traveller<br>View Indian vehicle photos ↗</a></div>
+<div class="carbody">
+<h3>Force Traveller</h3>
+<p>For group trips, tours and larger families.</p>
+<div class="model">Indian model: Force Traveller</div>
+<button class="select" onclick="choose('Force Traveller')">Select Vehicle</button>
+</div>
+</article>
 
-  <article class="card" data-vehicle="Dzire / Sedan" data-gallery="1">
-   <div class="photo" tabindex="0" role="button" aria-label="View sedan photos">
-    <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=900&q=80" alt="Sedan-style car" loading="eager">
-    <span>▣ View photos</span>
-   </div>
-   <div class="card-body"><h3>Dzire / Sedan</h3><p>A comfortable option for city and outstation rides.</p><div class="card-actions"><small>Sedan category</small><button class="select-vehicle" type="button">Select Vehicle</button></div></div>
-  </article>
+<article class="car">
+<div class="photo"><a href="https://www.google.com/search?tbm=isch&q=India+luxury+taxi+Mercedes+BMW+car" target="_blank" rel="noopener">🇮🇳<br>Luxury Cars in India<br>View vehicle photos ↗</a></div>
+<div class="carbody">
+<h3>Luxury Car</h3>
+<p>Premium travel for business trips and special occasions.</p>
+<div class="model">Model and availability confirmed on booking</div>
+<button class="select" onclick="choose('Luxury Car')">Select Vehicle</button>
+</div>
+</article>
 
-  <article class="card" data-vehicle="Ertiga / Innova / SUV-MUV" data-gallery="2">
-   <div class="photo" tabindex="0" role="button" aria-label="View SUV photos">
-    <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=900&q=80" alt="SUV-style vehicle" loading="eager">
-    <span>▣ View photos</span>
-   </div>
-   <div class="card-body"><h3>Ertiga / Innova / SUV-MUV</h3><p>More space for family travel and luggage.</p><div class="card-actions"><small>Family vehicle</small><button class="select-vehicle" type="button">Select Vehicle</button></div></div>
-  </article>
-
-  <article class="card" data-vehicle="Force Traveller" data-gallery="3">
-   <div class="photo" tabindex="0" role="button" aria-label="View traveller photos">
-    <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=900&q=80" alt="Passenger coach vehicle" loading="lazy">
-    <span>▣ View photos</span>
-   </div>
-   <div class="card-body"><h3>Force Traveller</h3><p>Group travel; confirm the seating variant before booking.</p><div class="card-actions"><small>Group vehicle</small><button class="select-vehicle" type="button">Select Vehicle</button></div></div>
-  </article>
-
-  <article class="card" data-vehicle="Luxury Car" data-gallery="4">
-   <div class="photo" tabindex="0" role="button" aria-label="View luxury car photos">
-    <img src="https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&w=900&q=80" alt="Premium-style car" loading="lazy">
-    <span>▣ View photos</span>
-   </div>
-   <div class="card-body"><h3>Luxury Car</h3><p>Premium-style travel for special occasions.</p><div class="card-actions"><small>Premium category</small><button class="select-vehicle" type="button">Select Vehicle</button></div></div>
-  </article>
-
-  <article class="card" data-vehicle="Mini Bus / Bus" data-gallery="5">
-   <div class="photo" tabindex="0" role="button" aria-label="View bus photos">
-    <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=900&q=80" alt="Bus-style group transport" loading="lazy">
-    <span>▣ View photos</span>
-   </div>
-   <div class="card-body"><h3>Mini Bus / Bus</h3><p>For larger groups and organised journeys.</p><div class="card-actions"><small>Large group</small><button class="select-vehicle" type="button">Select Vehicle</button></div></div>
-  </article>
- </div>
- <p class="note">Photos are illustrative and may not show the exact make or model. Confirm the actual vehicle with the operator.</p>
-</section>
-
-<section class="container section">
- <div class="eyebrow">Travel with confidence</div>
- <h2>Simple. Convenient. Reliable.</h2>
- <div class="features">
-  <div class="feature"><strong>Easy Booking</strong>Send your trip details through WhatsApp.</div>
-  <div class="feature"><strong>Vehicle Choices</strong>View photos and choose a vehicle category.</div>
-  <div class="feature"><strong>Across Gujarat</strong>Enter pickup and destination cities for an inquiry.</div>
- </div>
-</section>
-</main>
-
-<footer>GUJARAT TAXI HUB<br>Ride Easy. Travel Freely.<br>© <span id="year"></span> Gujarat Taxi Hub</footer>
-
-<div class="modal" id="gallery" role="dialog" aria-modal="true" aria-label="Vehicle photo gallery">
- <div class="modal-box">
-  <div class="modal-head"><h3 id="galleryTitle">Vehicle photos</h3><button class="close" id="closeGallery" type="button" aria-label="Close">×</button></div>
-  <img class="gallery-img" id="galleryImg" src="" alt="Vehicle gallery photo">
-  <div class="gallery-controls">
-   <button id="prev" type="button">← Previous</button>
-   <span id="galleryCount">1 / 3</span>
-   <button id="next" type="button">Next →</button>
-   <button class="btn" id="chooseFromGallery" type="button">Select This Vehicle</button>
-  </div>
- </div>
+<article class="car">
+<div class="photo"><a href="https://www.google.com/search?tbm=isch&q=Indian+mini+bus+tourist+bus" target="_blank" rel="noopener">🇮🇳<br>Indian Mini Bus<br>View vehicle photos ↗</a></div>
+<div class="carbody">
+<h3>Mini Bus / Bus</h3>
+<p>Group journeys, events, weddings and tours.</p>
+<div class="model">Actual bus type confirmed on booking</div>
+<button class="select" onclick="choose('Mini Bus / Bus')">Select Vehicle</button>
+</div>
+</article>
 </div>
 
+<p class="note"><strong>Vehicle photo notice:</strong> Official and reference photos help you identify the vehicle category. The actual vehicle model, colour and availability will be confirmed before your booking is finalised.</p>
+
+<form id="booking">
+<h2>Book Your Ride</h2>
+
+<label for="name">Your Name</label>
+<input id="name" required placeholder="Enter your name">
+
+<label for="phone">Mobile Number</label>
+<input id="phone" required type="tel" inputmode="tel" placeholder="Enter mobile number">
+
+<label for="vehicle">Choose Vehicle</label>
+<select id="vehicle" required>
+<option value="">Select a vehicle</option>
+<option>WagonR / Hatchback</option>
+<option>Dzire / Sedan</option>
+<option>Ertiga / Innova / SUV-MUV</option>
+<option>Force Traveller</option>
+<option>Luxury Car</option>
+<option>Mini Bus / Bus</option>
+</select>
+
+<label for="from">Pickup City</label>
+<input id="from" list="cities" required placeholder="Start typing a Gujarat city">
+<label for="to">Destination City</label>
+<input id="to" list="cities" required placeholder="Enter destination">
+<datalist id="cities">
+<option value="Ahmedabad"><option value="Rajkot">
+<option value="Surat"><option value="Vadodara">
+<option value="Gandhinagar"><option value="Bhavnagar">
+<option value="Jamnagar"><option value="Junagadh">
+<option value="Morbi"><option value="Gandhidham">
+<option value="Dwarka"><option value="Somnath">
+<option value="Porbandar"><option value="Anand">
+<option value="Nadiad"><option value="Mehsana">
+<option value="Bhuj"><option value="Palanpur">
+<option value="Amreli"><option value="Botad">
+</datalist>
+
+<label for="date">Travel Date</label>
+<input id="date" type="date" required>
+
+<label for="message">Extra Details (optional)</label>
+<textarea id="message" placeholder="Passengers, luggage, return trip, etc."></textarea>
+
+<button class="btn submit" type="submit">Continue on WhatsApp</button>
+</form>
+</main>
+
+<footer>
+GUJARAT TAXI HUB<br>
+Ride Easy. Travel Freely.
+</footer>
+
 <script>
-(function(){
-"use strict";
+const whatsappNumber = "918469982615";
 
-const WHATSAPP_NUMBER = "918469982615";
-const cityNames = [
-"Ahmedabad","Amreli","Anand","Ankleshwar","Bharuch","Bhavnagar",
-"Bhuj","Botad","Dahod","Dwarka","Gandhidham","Gandhinagar",
-"Godhra","Gondal","Jamnagar","Junagadh","Keshod","Mehsana",
-"Morbi","Nadiad","Navsari","Palanpur","Patan","Porbandar",
-"Rajkot","Somnath","Surat","Surendranagar","Vadodara","Valsad",
-"Vapi","Veraval","Ambaji","Kevadia","Saputara","Udaipur",
-"Mumbai","Pune","Nashik","Indore","Jaipur","Delhi","Mount Abu"
-];
-
-const galleries = [
-[
-"https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1200&q=85",
-"https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85",
-"https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=85"
-],
-[
-"https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&q=85",
-"https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=1200&q=85",
-"https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1200&q=85"
-],
-[
-"https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1200&q=85",
-"https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1200&q=85",
-"https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1200&q=85"
-],
-[
-"https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&q=85",
-"https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=85",
-"https://images.unsplash.com/photo-1464219789935-c2d9d9aba644?auto=format&fit=crop&w=1200&q=85"
-],
-[
-"https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&w=1200&q=85",
-"https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=85",
-"https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85"
-],
-[
-"https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=85",
-"https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&q=85",
-"https://images.unsplash.com/photo-1464219789935-c2d9d9aba644?auto=format&fit=crop&w=1200&q=85"
-]
-];
-
-const cards = Array.from(document.querySelectorAll(".card"));
-const modal = document.getElementById("gallery");
-const galleryImg = document.getElementById("galleryImg");
-const galleryTitle = document.getElementById("galleryTitle");
-const galleryCount = document.getElementById("galleryCount");
-const vehicleInput = document.getElementById("vehicle");
-let currentCard = 0;
-let currentPhoto = 0;
-
-document.getElementById("year").textContent = new Date().getFullYear();
-
-function updateGallery(){
- const photos = galleries[currentCard];
- galleryTitle.textContent = cards[currentCard].dataset.vehicle;
- galleryImg.onerror = function(){
-   this.onerror = null;
-   this.alt = "This photo could not load. Try the next photo.";
-   this.style.opacity = ".45";
- };
- galleryImg.style.opacity = "1";
- galleryImg.src = photos[currentPhoto];
- galleryCount.textContent = (currentPhoto + 1) + " / " + photos.length;
+function choose(vehicle) {
+  document.getElementById("vehicle").value = vehicle;
+  document.getElementById("booking").scrollIntoView({behavior:"smooth"});
 }
 
-function openGallery(index){
- currentCard = index;
- currentPhoto = 0;
- updateGallery();
- modal.classList.add("open");
- document.body.style.overflow = "hidden";
-}
+const dateInput = document.getElementById("date");
+const today = new Date();
+dateInput.min = [
+  today.getFullYear(),
+  String(today.getMonth()+1).padStart(2,"0"),
+  String(today.getDate()).padStart(2,"0")
+].join("-");
 
-function closeGallery(){
- modal.classList.remove("open");
- document.body.style.overflow = "";
-}
+document.getElementById("booking").addEventListener("submit", function(e) {
+  e.preventDefault();
 
-function chooseVehicle(index){
- currentCard = index;
- vehicleInput.value = cards[index].dataset.vehicle;
- cards.forEach((card,i)=>{
-  card.classList.toggle("selected",i===index);
-  card.querySelector(".select-vehicle").textContent =
-   i===index ? "✓ Selected" : "Select Vehicle";
- });
- closeGallery();
- document.getElementById("booking").scrollIntoView({behavior:"smooth"});
- const status = document.getElementById("status");
- status.textContent = vehicleInput.value + " selected. Complete your booking details.";
- status.style.display = "block";
-}
+  const name = document.getElementById("name").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const vehicle = document.getElementById("vehicle").value;
+  const from = document.getElementById("from").value.trim();
+  const to = document.getElementById("to").value.trim();
+  const date = document.getElementById("date").value;
+  const message = document.getElementById("message").value.trim();
 
-cards.forEach((card,index)=>{
- const photo = card.querySelector(".photo");
- photo.addEventListener("click",()=>openGallery(index));
- photo.addEventListener("keydown",e=>{
-  if(e.key==="Enter"||e.key===" "){e.preventDefault();openGallery(index);}
- });
- card.querySelector(".select-vehicle").addEventListener("click",()=>chooseVehicle(index));
+  const text =
+    "GUJARAT TAXI HUB - Ride Booking Inquiry\n\n" +
+    "Name: " + name + "\n" +
+    "Mobile: " + phone + "\n" +
+    "Vehicle: " + vehicle + "\n" +
+    "Pickup: " + from + "\n" +
+    "Destination: " + to + "\n" +
+    "Travel Date: " + date + "\n" +
+    "Details: " + (message || "Not provided");
+
+  window.open(
+    "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(text),
+    "_blank"
+  );
 });
-
-document.getElementById("prev").addEventListener("click",()=>{
- currentPhoto=(currentPhoto-1+galleries[currentCard].length)%galleries[currentCard].length;
- updateGallery();
-});
-document.getElementById("next").addEventListener("click",()=>{
- currentPhoto=(currentPhoto+1)%galleries[currentCard].length;
- updateGallery();
-});
-document.getElementById("chooseFromGallery").addEventListener("click",()=>chooseVehicle(currentCard));
-document.getElementById("closeGallery").addEventListener("click",closeGallery);
-modal.addEventListener("click",e=>{if(e.target===modal)closeGallery();});
-document.addEventListener("keydown",e=>{
- if(e.key==="Escape")closeGallery();
- if(modal.classList.contains("open")&&e.key==="ArrowRight")document.getElementById("next").click();
- if(modal.classList.contains("open")&&e.key==="ArrowLeft")document.getElementById("prev").click();
-});
-
-// City suggestions: works without an external maps API.
-function addAutocomplete(inputId,listId){
- const input=document.getElementById(inputId);
- const list=document.getElementById(listId);
-
- function hide(){list.style.display="none";list.replaceChildren();}
- function show(){
-  list.replaceChildren();
-  const query=input.value.trim().toLowerCase();
-  if(!query){hide();return;}
-  const matches=cityNames.filter(city=>city.toLowerCase().includes(query)).slice(0,8);
-
-  if(matches.length){
-   matches.forEach(city=>{
-    const button=document.createElement("button");
-    button.type="button";
-    button.textContent=city;
-    button.addEventListener("click",()=>{input.value=city;hide();});
-    list.appendChild(button);
-   });
-  }else{
-   const button=document.createElement("button");
-   button.type="button";
-   button.textContent='Use "'+input.value.trim()+'"';
-   button.addEventListener("click",()=>{input.value=input.value.trim();hide();});
-   list.appendChild(button);
-  }
-  list.style.display="block";
- }
- input.addEventListener("input",show);
- input.addEventListener("focus",show);
- input.addEventListener("keydown",e=>{
-  if(e.key==="Escape")hide();
-  if(e.key==="Enter"&&list.style.display==="block"){
-   const first=list.querySelector("button");
-   if(first){e.preventDefault();first.click();}
-  }
- });
- document.addEventListener("click",e=>{
-  if(!input.contains(e.target)&&!list.contains(e.target))hide();
- });
-}
-addAutocomplete("pickup","pickupList");
-addAutocomplete("destination","destinationList");
-
-const dateInput=do
+</script>
+</body>
+</html>
