@@ -1,282 +1,277 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="google-site-verification" content="cdBG4AvsSVxvSe-SRIE_fTgop-Azl4BLNLFgt-JhUG4" />
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gujarat Taxi Hub | Book Your Ride</title>
-  <meta name="description" content="Request taxi bookings anywhere in Gujarat. Choose your car and confirm your ride with our team.">
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: #090909;
-      color: #fff;
-      font-family: Arial, sans-serif;
-    }
-    header {
-      padding: 20px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #292929;
-    }
-    .logo { font-size: 19px; font-weight: 900; }
-    .logo span, .yellow { color: #ffd400; }
-    .hero {
-      padding: 65px 6% 45px;
-      text-align: center;
-      background: radial-gradient(ellipse at top, #292400, #090909 65%);
-    }
-    .tag {
-      color: #ffd400;
-      letter-spacing: 3px;
-      font-size: 12px;
-    }
-    h1 {
-      font-size: clamp(36px, 8vw, 65px);
-      line-height: 1.08;
-      margin: 20px 0;
-    }
-    .hero p { color: #bdbdbd; line-height: 1.6; }
-    .btn {
-      display: inline-block;
-      background: #ffd400;
-      color: #080808;
-      border: none;
-      padding: 15px 23px;
-      border-radius: 9px;
-      font-size: 15px;
-      font-weight: bold;
-      text-decoration: none;
-      cursor: pointer;
-    }
-    section { padding: 35px 6%; }
-    h2 { font-size: 27px; }
-    .booking {
-      max-width: 650px;
-      margin: 0 auto;
-      background: #151515;
-      padding: 22px;
-      border: 1px solid #333;
-      border-radius: 16px;
-    }
-    label { display: block; margin: 14px 0 7px; color: #ddd; }
-    input, select {
-      width: 100%;
-      padding: 13px;
-      background: #090909;
-      border: 1px solid #444;
-      border-radius: 8px;
-      color: white;
-      font-size: 15px;
-    }
-    .booking .btn { width: 100%; margin-top: 20px; }
-    .cars {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 13px;
-    }
-    .car {
-      padding: 20px 14px;
-      border: 1px solid #303030;
-      background: #151515;
-      border-radius: 12px;
-    }
-    .car .emoji { font-size: 32px; }
-    .car h3 { margin-bottom: 7px; }
-    .car p { color: #aaa; font-size: 13px; line-height: 1.5; }
-    .note { color: #aaa; font-size: 13px; line-height: 1.6; }
-    footer {
-      padding: 25px 6%;
-      text-align: center;
-      border-top: 1px solid #292929;
-      color: #999;
-      font-size: 13px;
-    }
-/* Premium car photo cards */
-body {
-  background: radial-gradient(ellipse at top, #242424, #101010 60%, #050505);
-  color: #fff;
-}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080808">
+<title>Gujarat Taxi Hub | Taxi Booking Across Gujarat</title>
+<meta name="description" content="Request taxi bookings across Gujarat. Explore cars, SUVs, luxury vehicles and group travel options.">
 
-.cars {
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
-}
-
-.car {
-  padding: 0 0 18px;
-  border: 1px solid #393939;
-  background: linear-gradient(145deg, #202020, #0c0c0c);
-  border-radius: 16px;
-  overflow: hidden;
-  transition: transform .25s, border-color .25s;
-}
-
-.car:hover {
-  transform: translateY(-4px);
-  border-color: #ffe500;
-}
-
-.car img {
-  display: block;
-  width: 100%;
-  height: 155px;
-  object-fit: cover;
-}
-
-.car h3 {
-  color: #ffe500;
-  margin: 15px 14px 8px;
-}
-
-.car p {
-  color: #d0d0d0;
-  font-size: 14px;
-  line-height: 1.6;
-  margin: 0 14px;
-}
-
-.yellow {
-  color: #ffe500;
-    }
-    
-  </style>
+<style>
+:root{--yellow:#ffe500;--bg:#080808;--panel:#131313;--muted:#bdbdbd;--border:#303030}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:white;line-height:1.6;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(rgba(5,5,5,.84),rgba(5,5,5,.94)),url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1800&q=85") center/cover no-repeat}
+a{color:inherit}
+.container{width:min(1100px,92%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:rgba(8,8,8,.95);border-bottom:1px solid #292929;backdrop-filter:blur(12px)}
+.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-size:clamp(17px,4vw,24px);font-weight:900;white-space:nowrap}
+.logo span,.yellow{color:var(--yellow)}
+.btn{display:inline-block;text-align:center;background:var(--yellow);color:#080808;padding:13px 19px;border:0;border-radius:9px;font-weight:800;text-decoration:none;cursor:pointer}
+.btn:hover{background:#fff16b}
+.hero{padding:85px 0 75px;min-height:420px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.tag{color:var(--yellow);border:1px solid #827900;border-radius:30px;padding:6px 13px;font-size:12px;font-weight:bold;letter-spacing:1px;margin-bottom:20px}
+.hero h1{font-size:clamp(40px,8vw,76px);line-height:1.08;letter-spacing:-2px;max-width:800px;margin-bottom:20px}
+.hero p{color:#ddd;max-width:570px;font-size:18px;margin-bottom:26px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn-outline{background:transparent;color:white;border:1px solid #777}
+section{padding:48px 0}
+.heading{font-size:clamp(29px,5vw,42px);line-height:1.2;margin-bottom:10px}
+.subheading{color:var(--muted);margin-bottom:28px}
+.booking{max-width:760px;margin:auto;background:rgba(17,17,17,.97);border:1px solid #393939;border-radius:18px;padding:clamp(20px,5vw,34px);box-shadow:0 15px 55px #0008}
+.booking h2{font-size:30px;margin-bottom:6px}
+.note{color:#aaa;font-size:13px;margin:8px 0 20px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field.full{grid-column:1/-1}
+label{display:block;font-size:14px;color:#ddd;margin-bottom:6px}
+input,select{width:100%;padding:13px;background:#090909;color:white;border:1px solid #444;border-radius:8px;min-height:47px}
+input:focus,select:focus{outline:1px solid var(--yellow);border-color:var(--yellow)}
+.booking .btn{width:100%;margin-top:20px;font-size:15px}
+.cars{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:20px}
+.car{background:linear-gradient(145deg,#181818,#0b0b0b);border:1px solid #383838;border-radius:17px;overflow:hidden;transition:transform .2s,border-color .2s}
+.car:hover{transform:translateY(-4px);border-color:var(--yellow)}
+.car img{display:block;width:100%;height:190px;object-fit:cover;background:#202020}
+.car-info{padding:18px}
+.car h3{color:var(--yellow);font-size:23px;margin-bottom:7px}
+.car p{color:#ccc;font-size:14px}
+.capacity{display:inline-block;margin-top:12px;padding:5px 9px;border:1px solid #444;border-radius:6px;color:#eee;font-size:12px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.step{background:#111;border:1px solid #303030;border-radius:12px;padding:20px}
+.step b{color:var(--yellow);display:block;margin-bottom:8px;font-size:18px}
+footer{border-top:1px solid #292929;padding:30px 0;text-align:center;color:#aaa;font-size:14px}
+footer strong{color:white}
+@media(max-width:560px){.nav{min-height:64px}.nav .btn{padding:10px 12px;font-size:13px}.hero{padding:65px 0 55px;min-height:370px}.hero h1{letter-spacing:-1px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.car img{height:190px}section{padding:38px 0}}
+</style>
 </head>
-<body>
-  <header>
-    <div class="logo">GUJARAT <span>TAXI HUB</span></div>
-    <a class="btn" href="#booking">Book a Ride</a>
-  </header>
 
-  <div class="hero">
-    <div class="tag">YOUR RIDE • YOUR GUJARAT</div>
-    <h1>Ride Easy.<br><span class="yellow">Travel Freely.</span></h1>
-    <p>Find the right ride for your next trip across Gujarat.</p>
-    <a href="#booking" class="btn">BOOK YOUR TAXI ↗</a>
+<body>
+<header>
+  <div class="container nav">
+    <div class="logo">GUJARAT <span>TAXI HUB</span></div>
+    <a class="btn" href="#booking">Book a Ride ↗</a>
   </div>
+</header>
+
+<main>
+  <section class="container hero">
+    <div class="tag">YOUR RIDE · YOUR GUJARAT</div>
+    <h1>Ride Easy.<br><span class="yellow">Travel Freely.</span></h1>
+    <p>From city rides to family trips, send us your travel details and request a taxi anywhere across Gujarat.</p>
+    <div class="hero-actions">
+      <a class="btn" href="#booking">REQUEST A TAXI →</a>
+      <a class="btn btn-outline" href="#vehicles">Explore Vehicles</a>
+    </div>
+  </section>
 
   <section id="booking">
-    <div class="booking">
-      <h2>Book Your <span class="yellow">Ride</span></h2>
-      <p class="note">Send your trip details to request a booking.</p>
-      <form id="rideForm">
-        <label for="pickup">Pickup City</label>
-        <input id="pickup" required placeholder="e.g. Ahmedabad">
+    <div class="container">
+      <div class="booking">
+        <h2>Book Your <span class="yellow">Ride</span></h2>
+        <p class="note">Share your trip details. We'll open WhatsApp with your booking request.</p>
 
-        <label for="destination">Destination City</label>
-        <input id="destination" required placeholder="e.g. Surat">
+        <form id="rideForm">
+          <div class="form-grid">
+            <div class="field">
+              <label for="pickup">Pickup City / Location *</label>
+              <input id="pickup" name="pickup" placeholder="e.g. Ahmedabad" required>
+            </div>
+            <div class="field">
+              <label for="destination">Destination *</label>
+              <input id="destination" name="destination" placeholder="e.g. Surat" required>
+            </div>
+            <div class="field">
+              <label for="date">Travel Date *</label>
+              <input id="date" name="date" type="date" required>
+            </div>
+            <div class="field">
+              <label for="time">Pickup Time *</label>
+              <input id="time" name="time" type="time" required>
+            </div>
+            <div class="field">
+              <label for="passengers">Passengers *</label>
+              <select id="passengers" name="passengers" required>
+                <option value="1">1 passenger</option>
+                <option value="2" selected>2 passengers</option>
+                <option value="3">3 passengers</option>
+                <option value="4">4 passengers</option>
+                <option value="5">5 passengers</option>
+                <option value="6">6 passengers</option>
+                <option value="7">7 passengers</option>
+                <option value="8">8 passengers</option>
+                <option value="9+">9+ passengers</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="trip">Trip Type *</label>
+              <select id="trip" name="trip" required>
+                <option value="One Way">One Way</option>
+                <option value="Round Trip">Round Trip</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="category">Choose Vehicle *</label>
+              <select id="category" name="category" required>
+                <option value="Hatchback">Hatchback — WagonR / similar</option>
+                <option value="Sedan">Sedan — Dzire / similar</option>
+                <option value="SUV / MUV">SUV / MUV — Ertiga / Innova / similar</option>
+                <option value="Luxury Car">Luxury Car</option>
+                <option value="Tempo Traveller">Tempo Traveller</option>
+                <option value="Mini Bus / Bus">Mini Bus / Bus</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="message">Extra Requirements (optional)</label>
+              <input id="message" name="message" placeholder="Luggage, return date, child seat, etc.">
+            </div>
+          </div>
+          <button class="btn" type="submit">REQUEST BOOKING ON WHATSAPP ↗</button>
+          <p class="note">This is a booking request, not a confirmed reservation. Fare, vehicle, and availability must be confirmed.</p>
+          <p id="formStatus" class="note" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
 
-        <label for="date">Travel Date</label>
-        <input id="date" type="date" required>
+  <section id="vehicles">
+    <div class="container">
+      <h2 class="heading">Choose Your <span class="yellow">Ride</span></h2>
+      <p class="subheading">Explore vehicle categories for different journeys and group sizes.</p>
 
-        <label for="time">Pickup Time</label>
-        <input id="time" type="time" required>
+      <div class="cars">
+        <article class="car">
+          <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=900&q=80" alt="Compact car example" loading="lazy">
+          <div class="car-info">
+            <h3>🚗 Hatchback</h3>
+            <p>WagonR and similar compact cars for everyday journeys.</p>
+            <span class="capacity">Typically up to 4 passengers</span>
+          </div>
+        </article>
 
-        <label for="passengers">Passengers</label>
-        <select id="passengers">
-          <option>1</option><option>2</option><option>3</option>
-          <option>4</option><option>5</option><option>6</option>
-          <option>7</option><option>8</option><option>9+</option>
-        </select>
+        <article class="car">
+          <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=900&q=80" alt="Sedan car example" loading="lazy">
+          <div class="car-info">
+            <h3>🚘 Sedan</h3>
+            <p>Dzire and similar cars for comfortable city-to-city travel.</p>
+            <span class="capacity">Typically up to 4 passengers</span>
+          </div>
+        </article>
 
-        <label for="trip">Trip Type</label>
-        <select id="trip">
-          <option>One Way</option>
-          <option>Round Trip</option>
-        </select>
+        <article class="car">
+          <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=900&q=80" alt="SUV vehicle example" loading="lazy">
+          <div class="car-info">
+            <h3>🚙 SUV / MUV</h3>
+            <p>Ertiga, Innova and similar vehicles for family trips.</p>
+            <span class="capacity">Seating depends on vehicle</span>
+          </div>
+        </article>
 
-        <label for="category">Choose Vehicle</label>
-        <select id="category">
-          <option>Hatchback</option>
-          <option>Sedan</option>
-          <option>SUV / MUV</option>
-          <option>Tempo Traveller</option>
-          <option>Luxury Car</option>
-          <option>Mini Bus / Bus</option>
-        </select>
+        <article class="car">
+          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80" alt="Premium car example" loading="lazy">
+          <div class="car-info">
+            <h3>✨ Luxury Car</h3>
+            <p>Premium travel options for special occasions and business trips.</p>
+            <span class="capacity">Availability on request</span>
+          </div>
+        </article>
 
-        <button class="btn" type="submit">REQUEST BOOKING ON WHATSAPP</button>
-      </form>
-      <p class="note">Your booking is only a request. Fare and vehicle availability must be confirmed.</p>
+        <article class="car">
+          <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=900&q=80" alt="Passenger minibus example" loading="lazy">
+          <div class="car-info">
+            <h3>🚐 Tempo Traveller</h3>
+            <p>Group trips, family tours and outstation journeys.</p>
+            <span class="capacity">Capacity confirmed by operator</span>
+          </div>
+        </article>
+
+        <article class="car">
+          <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=900&q=80" alt="Passenger bus example" loading="lazy">
+          <div class="car-info">
+            <h3>🚌 Mini Bus / Bus</h3>
+            <p>Group travel for events, tours and larger parties.</p>
+            <span class="capacity">Capacity confirmed by operator</span>
+          </div>
+        </article>
+      </div>
+      <p class="note">Photos are illustrative examples. Actual vehicle model, seating, luggage space and availability may differ.</p>
     </div>
   </section>
 
   <section>
-    <h2>Choose Your <span class="yellow">Ride</span></h2>
-    <div class="cars">
-      
-  <div class="car">
-    <img src="https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&w=800&q=80" alt="Hatchback car">
-    <h3>🚗 Hatchback</h3>
-    <p>WagonR and similar cars · Up to 4 passengers</p>
-  </div>
-  <div class="car">
-    <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80" alt="Sedan car">
-    <h3>🚘 Sedan</h3>
-    <p>Dzire and similar cars · City-to-city travel</p>
-  </div>
-  <div class="car">
-    <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=800&q=80" alt="SUV car">
-    <h3>🚙 SUV / MUV</h3>
-    <p>Ertiga, Innova and similar cars · Family trips</p>
-  </div>
-  <div class="car">
-    <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=80" alt="Luxury car">
-    <h3>✨ Luxury Car</h3>
-    <p>Premium travel · Availability on request</p>
-  </div>
-  <div class="car">
-    <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=800&q=80" alt="Tempo Traveller">
-    <h3>🚐 Tempo Traveller</h3>
-    <p>Group trips and family tours</p>
-  </div>
-  <div class="car">
-    <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=800&q=80" alt="Bus">
-    <h3>🚌 Mini Bus / Bus</h3>
-    <p>Group travel · Availability on request</p>
-  </div>
-</div>
-
+    <div class="container">
+      <h2 class="heading">How It <span class="yellow">Works</span></h2>
+      <p class="subheading">A simple way to request your next journey.</p>
+      <div class="steps">
+        <div class="step"><b>01 · Share your trip</b><p>Enter your pickup, destination, date and vehicle preference.</p></div>
+        <div class="step"><b>02 · Send on WhatsApp</b><p>Your details open in WhatsApp so you can send the request.</p></div>
+        <div class="step"><b>03 · Confirm the booking</b><p>Confirm fare, operator, vehicle and availability before travelling.</p></div>
+      </div>
+    </div>
   </section>
+</main>
 
-  <footer>
+<footer>
+  <div class="container">
     <p><strong>GUJARAT TAXI HUB</strong></p>
     <p>Taxi booking requests across Gujarat.</p>
-    <p>Vehicle availability and fares are subject to confirmation.</p>
-  </footer>
+    <p>Fares and vehicle availability are subject to confirmation.</p>
+    <p>© <span id="year"></span> Gujarat Taxi Hub</p>
+  </div>
+</footer>
 
-  <script>
-    // Replace this with your own WhatsApp number.
-    const WHATSAPP_NUMBER = "918469982615";
+<script>
+  const WHATSAPP_NUMBER = "918469982615";
 
-    document.getElementById("rideForm").addEventListener("submit", function(e) {
-      e.preventDefault();
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-      if (WHATSAPP_NUMBER.includes("X")) {
-        alert("WhatsApp booking setup pending. Add your WhatsApp number in the website code first.");
-        return;
-      }
+  const dateInput = document.getElementById("date");
+  const today = new Date();
+  const localToday = new Date(
+    today.getTime() - today.getTimezoneOffset() * 60000
+  ).toISOString().slice(0, 10);
+  dateInput.min = localToday;
 
-      const msg = [
-        "GUJARAT TAXI HUB - Booking Request",
-        "Pickup: " + document.getElementById("pickup").value,
-        "Destination: " + document.getElementById("destination").value,
-        "Date: " + document.getElementById("date").value,
-        "Time: " + document.getElementById("time").value,
-        "Passengers: " + document.getElementById("passengers").value,
-        "Trip: " + document.getElementById("trip").value,
-        "Vehicle: " + document.getElementById("category").value
-      ].join("\n");
+  document.getElementById("rideForm").addEventListener("submit", function(event) {
+    event.preventDefault();
 
-      window.open(
-        "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg),
-        "_blank"
-      );
-    });
-  </script>
+    const get = id => document.getElementById(id).value.trim();
+
+    const bookingText = [
+      "🚕 *NEW TAXI BOOKING REQUEST*",
+      "",
+      "*GUJARAT TAXI HUB*",
+      "*Pickup:* " + get("pickup"),
+      "*Destination:* " + get("destination"),
+      "*Travel Date:* " + get("date"),
+      "*Pickup Time:* " + get("time"),
+      "*Passengers:* " + get("passengers"),
+      "*Trip Type:* " + get("trip"),
+      "*Vehicle:* " + get("category"),
+      "*Extra Requirements:* " + (get("message") || "None"),
+      "",
+      "Please confirm fare, vehicle availability and booking."
+    ].join("\n");
+
+    const whatsappURL =
+      "https://wa.me/" + WHATSAPP_NUMBER +
+      "?text=" + encodeURIComponent(bookingText);
+
+    document.getElementById("formStatus").textContent =
+      "Opening WhatsApp. Please press Send there to submit your request.";
+
+    window.open(whatsappURL, "_blank", "noopener,noreferrer");
+  });
+</script>
 </body>
-  </html>
-  
+</html>
