@@ -1,134 +1,259 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#08111f">
-<meta name="description" content="Book taxis, SUVs, premium cars, tempo travellers and mini buses for trips across Gujarat.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#081522">
+<meta name="description" content="Book taxi cars in Gujarat for local travel, airport transfers, family trips and outstation journeys.">
 <title>Gujarat Taxi Hub | Your Journey, Our Priority</title>
+
 <style>
-:root{--bg:#08111f;--panel:#111e30;--yellow:#ffc928;--text:#fff;--muted:#c1ccda}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:85px}
-body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
-a{color:inherit;text-decoration:none}
-img{width:100%;display:block;object-fit:cover}
-.container{width:min(1160px,92%);margin:auto}
-section{padding:76px 0}
-header{position:sticky;top:0;z-index:10;background:#08111ff2;border-bottom:1px solid #ffffff20;backdrop-filter:blur(12px)}
-.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-.logo{font-size:21px;font-weight:900;line-height:1.15}
-.logo span{color:var(--yellow)}
-.logo small{display:block;font-size:10px;letter-spacing:2px;color:var(--muted);margin-top:5px}
-.links{display:flex;align-items:center;gap:23px;font-size:14px;font-weight:bold}
-.links a:hover{color:var(--yellow)}
-.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--yellow);color:#161616;padding:13px 20px;border-radius:9px;font-weight:800;border:0;cursor:pointer}
-.btn:hover{filter:brightness(1.08)}
-.hero{min-height:590px;display:flex;align-items:center;background:linear-gradient(90deg,#08111ff5 0%,#08111fd9 46%,#08111f55 100%),url('./premium-car.jpg') center/cover no-repeat}
-.hero-content{max-width:680px;padding:75px 0}
-.eyebrow{color:var(--yellow);font-size:12px;letter-spacing:3px;font-weight:900;text-transform:uppercase}
-h1{font-size:clamp(38px,6vw,68px);line-height:1.08;margin:18px 0}
-h1 span,h2 span{color:var(--yellow)}
-.hero p,.intro{color:var(--muted);font-size:17px;max-width:620px}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
-.btn-outline{border:1px solid #ffffff65;background:#ffffff10;color:white}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);background:#101c2c;border:1px solid #ffffff16;border-radius:15px;margin-top:-28px;position:relative;z-index:2}
-.stat{text-align:center;padding:23px 10px;border-right:1px solid #ffffff16}
-.stat:last-child{border:0}
-.stat strong{display:block;color:var(--yellow);font-size:22px}
-.stat span{font-size:12px;color:var(--muted)}
-.section-head{text-align:center;max-width:760px;margin:0 auto 35px}
-h2{font-size:clamp(28px,4vw,43px);line-height:1.2;margin:10px 0}
-.intro{font-size:15px;margin:0 auto}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
-.card{background:var(--panel);border:1px solid #ffffff15;border-radius:16px;overflow:hidden;transition:transform .2s}
-.card:hover{transform:translateY(-4px)}
-.card img{height:220px}
-.card-body{padding:20px}
-.card h3{font-size:21px;margin-bottom:8px}
-.card p{font-size:14px;color:var(--muted);margin-bottom:15px}
-.card .btn{width:100%;margin-top:5px}
-.tag{display:inline-block;color:var(--yellow);background:#ffc92818;padding:5px 9px;border-radius:6px;font-size:12px;margin-bottom:10px}
-.alt{background:#0d1828}
-.services .card{padding:24px}
-.icon{font-size:30px;margin-bottom:10px}
-.destinations .card img{height:250px}
-.destinations .card-body{padding:17px 19px}
-.destinations .card h3{margin-bottom:4px}
-.destinations .card p{margin-bottom:0}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.step{padding:25px;border:1px solid #ffffff20;border-radius:14px;background:var(--panel)}
-.step b{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--yellow);color:#111;margin-bottom:14px}
-.booking{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:start}
-.booking-copy{padding:24px 0}
-.booking-copy p{color:var(--muted);margin:14px 0}
-form{background:var(--panel);border:1px solid #ffffff20;border-radius:16px;padding:24px}
-.fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
-input,select,textarea{width:100%;padding:13px;border:1px solid #ffffff25;background:#091321;color:white;border-radius:8px;outline:none}
-input:focus,select:focus,textarea:focus{border-color:var(--yellow)}
-.full{grid-column:1/-1}
-form .btn{width:100%;margin-top:17px}
-.faq{max-width:850px;margin:auto}
-details{background:var(--panel);border:1px solid #ffffff16;padding:18px 20px;border-radius:10px;margin-bottom:12px}
-summary{font-weight:bold;cursor:pointer}
-details p{color:var(--muted);margin-top:10px;font-size:14px}
-.cta{background:linear-gradient(120deg,#ffc928,#f6a91b);color:#151515;border-radius:18px;padding:38px;display:flex;justify-content:space-between;align-items:center;gap:20px}
-.cta p{margin-top:6px}
-.cta .btn{background:#08111f;color:white;white-space:nowrap}
-footer{padding:35px 0;border-top:1px solid #ffffff20;color:var(--muted);font-size:13px}
-.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.whatsapp{position:fixed;right:20px;bottom:20px;z-index:20;background:#19c66a;color:white;border-radius:50px;padding:14px 18px;font-weight:900;box-shadow:0 6px 25px #0006}
-@media(max-width:800px){
- .links{gap:12px;font-size:12px}.nav{flex-wrap:wrap;padding:13px 0}.logo{font-size:18px}
- .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
- .booking{grid-template-columns:1fr}.hero{min-height:530px}
+:root {
+  --navy: #081522;
+  --panel: #10263a;
+  --yellow: #ffc857;
+  --white: #ffffff;
+  --muted: #c0ccd7;
 }
-@media(max-width:560px){
- .nav{justify-content:center}.logo{width:100%;text-align:center}
- .links{width:100%;justify-content:center;flex-wrap:wrap;gap:12px}
- .links .btn{padding:9px 12px}
- section{padding:55px 0}.hero-content{padding:60px 0}
- .hero p{font-size:15px}.stats{grid-template-columns:repeat(2,1fr);margin-top:15px}
- .stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid #ffffff16}
- .grid,.steps{grid-template-columns:1fr}.card img{height:230px}
- .fields{grid-template-columns:1fr}.full{grid-column:auto}
- .cta{padding:25px;display:block}.cta .btn{margin-top:18px}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--navy);
+  color: var(--white);
+  line-height: 1.6;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; width: 100%; object-fit: cover; }
+.container { width: min(1160px, 92%); margin: auto; }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(8,21,34,.96);
+  border-bottom: 1px solid #ffffff20;
+}
+nav {
+  min-height: 76px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.logo { font-size: 21px; font-weight: 900; line-height: 1.15; }
+.logo span { color: var(--yellow); }
+.logo small {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--muted);
+  margin-top: 5px;
+}
+.navlinks { display: flex; align-items: center; gap: 25px; font-size: 14px; }
+.navlinks a:hover { color: var(--yellow); }
+.btn {
+  display: inline-block;
+  background: var(--yellow);
+  color: #172333;
+  padding: 13px 20px;
+  border-radius: 9px;
+  border: 0;
+  font-weight: 800;
+  cursor: pointer;
+  text-align: center;
+}
+.btn:hover { filter: brightness(1.06); transform: translateY(-1px); }
+.btn-outline { border: 1px solid #ffffff70; background: transparent; color: white; }
+.hero {
+  min-height: 590px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, #081522 0%, rgba(8,21,34,.94) 34%,
+    rgba(8,21,34,.56) 64%, rgba(8,21,34,.3) 100%),
+    url("./sedan.jpg") center right / cover no-repeat;
+}
+.hero-content { max-width: 650px; padding: 80px 0 105px; }
+.eyebrow {
+  color: var(--yellow);
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+h1 { font-size: clamp(38px, 5.4vw, 66px); line-height: 1.08; margin: 16px 0; }
+h1 span { color: var(--yellow); }
+.hero p { color: #e0e7ed; max-width: 560px; font-size: 17px; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 25px; }
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  background: #102b40;
+  border: 1px solid #ffffff1a;
+  border-radius: 16px;
+  margin-top: -42px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 15px 40px #0003;
+}
+.stat { padding: 20px 10px; text-align: center; border-right: 1px solid #ffffff18; }
+.stat:last-child { border: 0; }
+.stat strong { display: block; color: var(--yellow); font-size: 20px; }
+.stat small { color: var(--muted); }
+section { padding: 78px 0; }
+.section-head { text-align: center; margin: 0 auto 35px; max-width: 680px; }
+h2 { font-size: clamp(28px,4vw,42px); margin: 8px 0; line-height: 1.2; }
+.section-head p, .muted { color: var(--muted); }
+.grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+.card {
+  overflow: hidden;
+  border: 1px solid #ffffff16;
+  border-radius: 15px;
+  background: var(--panel);
+  transition: transform .2s;
+}
+.card:hover { transform: translateY(-4px); }
+.card img { height: 220px; background: #183349; }
+.card-body { padding: 21px; }
+.tag { color: var(--yellow); font-size: 12px; font-weight: 800; }
+.card h3 { margin: 8px 0; font-size: 21px; }
+.card p { color: var(--muted); font-size: 14px; min-height: 45px; }
+.card .btn { width: 100%; margin-top: 8px; }
+.services { background: #0d2031; }
+.service-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+.service {
+  padding: 24px;
+  border-radius: 13px;
+  background: var(--panel);
+  border: 1px solid #ffffff16;
+}
+.service .symbol { font-size: 28px; }
+.service p { color: var(--muted); font-size: 14px; }
+.destinations .card img { height: 200px; }
+.destinations .card-body { padding: 16px 19px; }
+.steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.step { padding: 25px; border-radius: 13px; background: var(--panel); }
+.step b { color: var(--yellow); font-size: 26px; }
+.step p { color: var(--muted); font-size: 14px; }
+.booking { background: #0d2031; }
+.booking-box {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: 35px;
+  padding: 35px;
+  border: 1px solid #ffffff1c;
+  border-radius: 18px;
+  background: var(--panel);
+}
+.booking-box p { color: var(--muted); }
+form { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+label { font-size: 13px; color: var(--muted); }
+input, select, textarea {
+  width: 100%;
+  margin-top: 6px;
+  padding: 13px;
+  color: white;
+  background: #081522;
+  border: 1px solid #ffffff25;
+  border-radius: 8px;
+}
+select option { background: #081522; }
+.full { grid-column: 1 / -1; }
+form button { width: 100%; }
+.faq { max-width: 800px; margin: auto; }
+details { padding: 18px 0; border-bottom: 1px solid #ffffff20; }
+summary { cursor: pointer; font-weight: 800; }
+details p { color: var(--muted); }
+.cta {
+  text-align: center;
+  border-radius: 18px;
+  padding: 45px 25px;
+  background: linear-gradient(120deg,#183b51,#10263a);
+  border: 1px solid #ffffff20;
+}
+footer { padding: 35px 0; background: #06101a; color: var(--muted); }
+.footer-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 20;
+  border-radius: 40px;
+  padding: 14px 20px;
+  background: #16c784;
+  color: #06251a;
+  font-weight: 900;
+  box-shadow: 0 6px 25px #0005;
+}
+@media(max-width:800px) {
+  .navlinks { gap: 12px; font-size: 12px; }
+  .navlinks .btn { padding: 9px 11px; }
+  .hero { min-height: 540px; background-position: 60% center; }
+  .hero-content { padding: 65px 0 90px; }
+  .grid { grid-template-columns: repeat(2,1fr); }
+  .booking-box { grid-template-columns: 1fr; }
+}
+@media(max-width:540px) {
+  nav { min-height: 70px; gap: 10px; }
+  .logo { font-size: 16px; }
+  .logo small { font-size: 7px; letter-spacing: 1px; }
+  .navlinks { gap: 10px; }
+  .navlinks a:not(.btn) { display: none; }
+  .hero { min-height: 530px; background-position: 58% center; }
+  .hero-content { padding: 60px 0 85px; }
+  .hero p { font-size: 15px; }
+  .stats { grid-template-columns: repeat(2,1fr); }
+  .stat:nth-child(2) { border-right: 0; }
+  .stat:nth-child(-n+2) { border-bottom: 1px solid #ffffff18; }
+  section { padding: 58px 0; }
+  .grid, .service-grid, .steps { grid-template-columns: 1fr; }
+  .card img { height: 230px; }
+  .booking-box { padding: 22px; }
+  form { grid-template-columns: 1fr; }
+  .full { grid-column: auto; }
 }
 </style>
 </head>
-<body>
 
+<body>
 <header>
- <div class="container nav">
-  <a class="logo" href="#home">GUJARAT <span>TAXI HUB</span><small>YOUR JOURNEY, OUR PRIORITY</small></a>
-  <nav class="links">
-   <a href="#home">Home</a><a href="#cars">Our Cars</a><a href="#services">Services</a><a href="#destinations">Destinations</a><a href="#booking" class="btn">Book Your Ride ↗</a>
+  <nav class="container">
+    <a class="logo" href="#home">GUJARAT <span>TAXI HUB</span>
+      <small>YOUR JOURNEY, OUR PRIORITY</small>
+    </a>
+    <div class="navlinks">
+      <a href="#home">Home</a>
+      <a href="#cars">Our Cars</a>
+      <a href="#services">Services</a>
+      <a href="#destinations">Destinations</a>
+      <a class="btn" href="#booking">Book Your Ride ↗</a>
+    </div>
   </nav>
- </div>
 </header>
 
 <main>
 <section class="hero" id="home">
- <div class="container hero-content">
-  <div class="eyebrow">Your Gujarat Journey Starts Here</div>
-  <h1>Explore Gujarat.<br><span>Travel Your Way.</span></h1>
-  <p>Comfortable taxi rides, family trips, airport transfers and outstation journeys. Choose your vehicle and plan your next trip with Gujarat Taxi Hub.</p>
-  <div class="actions">
-   <a class="btn" href="#booking">Book Your Taxi ↗</a>
-   <a class="btn btn-outline" href="#cars">Explore Our Cars</a>
+  <div class="container">
+    <div class="hero-content">
+      <div class="eyebrow">Your Gujarat Journey Starts Here</div>
+      <h1>Explore Gujarat.<br><span>Travel Your Way.</span></h1>
+      <p>Comfortable taxi rides, family trips, airport transfers and outstation journeys. Choose your vehicle and plan your next trip with Gujarat Taxi Hub.</p>
+      <div class="actions">
+        <a class="btn" href="#booking">Book Your Taxi ↗</a>
+        <a class="btn btn-outline" href="#cars">Explore Our Cars</a>
+      </div>
+    </div>
   </div>
- </div>
 </section>
 
-<div class="container">
- <div class="stats">
-  <div class="stat"><strong>24/7</strong><span>Booking enquiries</span></div>
-  <div class="stat"><strong>All Gujarat</strong><span>Trip destinations</span></div>
-  <div class="stat"><strong>5 Types</strong><span>Vehicle options</span></div>
-  <div class="stat"><strong>Easy</strong><span>WhatsApp booking</span></div>
- </div>
+<div class="container stats">
+  <div class="stat"><strong>24/7</strong><small>Booking Enquiries</small></div>
+  <div class="stat"><strong>All Gujarat</strong><small>Trip Destinations</small></div>
+  <div class="stat"><strong>5 Options</strong><small>Vehicle Categories</small></div>
+  <div class="stat"><strong>Easy</strong><small>WhatsApp Booking</small></div>
 </div>
 
 <section id="cars">
@@ -136,181 +261,173 @@ footer{padding:35px 0;border-top:1px solid #ffffff20;color:var(--muted);font-siz
     <div class="section-head">
       <div class="eyebrow">Choose Your Ride</div>
       <h2>Our Vehicles</h2>
-      <p class="muted">Choose the right vehicle for your journey across Gujarat.</p>
+      <p>Choose the right vehicle for your journey across Gujarat.</p>
     </div>
-
     <div class="grid">
       <article class="card">
-        <img src="./sedan.jpg" alt="Sedan taxi" loading="lazy">
-        <div class="card-body">
-          <span class="tag">Everyday Comfort</span>
-          <h3>Sedan</h3>
+        <img src="./sedan.jpg" alt="Sedan taxi car" loading="lazy">
+        <div class="card-body"><span class="tag">Everyday Comfort</span><h3>Sedan</h3>
           <p>Comfortable travel for city rides, business trips and small families.</p>
-          <a class="btn btn-yellow" href="https://wa.me/918469982615?text=Hello%2C%20I%20want%20to%20book%20a%20Sedan.">Choose Sedan</a>
+          <a class="btn" href="#booking" onclick="chooseCar('Sedan')">Choose Sedan</a>
         </div>
       </article>
-
       <article class="card">
-        <img src="./suv-7-seater.jpg" alt="7-seater SUV" loading="lazy">
-        <div class="card-body">
-          <span class="tag">Family Favourite</span>
-          <h3>7-Seater SUV</h3>
+        <img src="./suv-7-seater.jpg" alt="Seven seater SUV taxi" loading="lazy">
+        <div class="card-body"><span class="tag">Family Favourite</span><h3>7-Seater SUV</h3>
           <p>Extra space for family holidays, airport transfers and outstation journeys.</p>
-          <a class="btn btn-yellow" href="https://wa.me/918469982615?text=Hello%2C%20I%20want%20to%20book%20a%207-Seater%20SUV.">Choose SUV</a>
+          <a class="btn" href="#booking" onclick="chooseCar('7-Seater SUV')">Choose SUV</a>
         </div>
       </article>
-
       <article class="card">
-        <img src="./premium-car.jpg" alt="Premium car" loading="lazy">
-        <div class="card-body">
-          <span class="tag">Premium Comfort</span>
-          <h3>Premium Car</h3>
+        <img src="./premium-car.jpg" alt="Premium taxi car" loading="lazy">
+        <div class="card-body"><span class="tag">Premium Comfort</span><h3>Premium Car</h3>
           <p>A stylish option for special occasions and premium journeys.</p>
-          <a class="btn btn-yellow" href="https://wa.me/918469982615?text=Hello%2C%20I%20want%20to%20book%20a%20Premium%20Car.">Choose Premium</a>
+          <a class="btn" href="#booking" onclick="chooseCar('Premium Car')">Choose Premium</a>
         </div>
       </article>
-
       <article class="card">
         <img src="./tempo-urbania.jpg" alt="Tempo Traveller and Urbania" loading="lazy">
-        <div class="card-body">
-          <span class="tag">Group Travel</span>
-          <h3>Tempo Traveller / Urbania</h3>
-          <p>Group travel for family holidays, pilgrimages and longer tours.</p>
-          <a class="btn btn-yellow" href="https://wa.me/918469982615?text=Hello%2C%20I%20want%20to%20book%20a%20Tempo%20Traveller%20or%20Urbania.">Choose Traveller</a>
+        <div class="card-body"><span class="tag">Group Travel</span><h3>Tempo Traveller / Urbania</h3>
+          <p>Group travel for family holidays, pilgrimages, events and longer tours.</p>
+          <a class="btn" href="#booking" onclick="chooseCar('Tempo Traveller / Urbania')">Choose Traveller</a>
         </div>
       </article>
-
       <article class="card">
-        <img src="./mini-bus.jpg" alt="Mini bus" loading="lazy">
-        <div class="card-body">
-          <span class="tag">Larger Groups</span>
-          <h3>Mini Bus</h3>
+        <img src="./mini-bus.jpg" alt="Mini bus for group travel" loading="lazy">
+        <div class="card-body"><span class="tag">Larger Groups</span><h3>Mini Bus</h3>
           <p>A group transport option for events, tours and organised journeys.</p>
-          <a class="btn btn-yellow" href="https://wa.me/918469982615?text=Hello%2C%20I%20want%20to%20book%20a%20Mini%20Bus.">Choose Mini Bus</a>
+          <a class="btn" href="#booking" onclick="chooseCar('Mini Bus')">Choose Mini Bus</a>
         </div>
       </article>
     </div>
   </div>
 </section>
 
-<section class="alt services" id="services">
- <div class="container">
-  <div class="section-head"><div class="eyebrow">Travel Made Simple</div><h2>Our <span>Taxi Services</span></h2><p class="intro">Flexible travel options for different journeys and occasions.</p></div>
-  <div class="grid">
-   <article class="card"><div class="card-body"><div class="icon">✈️</div><h3>Airport Transfers</h3><p>Arrange pickups and drop-offs for your flight schedule.</p></div></article>
-   <article class="card"><div class="card-body"><div class="icon">🛣️</div><h3>Outstation Trips</h3><p>Plan one-way and return journeys between Gujarat cities.</p></div></article>
-   <article class="card"><div class="card-body"><div class="icon">🙏</div><h3>Pilgrimage Tours</h3><p>Plan temple visits and religious trips with your family.</p></div></article>
-   <article class="card"><div class="card-body"><div class="icon">👨‍👩‍👧‍👦</div><h3>Family Holidays</h3><p>Choose a suitable vehicle for your family getaway.</p></div></article>
-   <article class="card"><div class="card-body"><div class="icon">💼</div><h3>Business Travel</h3><p>Arrange transport for meetings, visits and work trips.</p></div></article>
-   <article class="card"><div class="card-body"><div class="icon">🚌</div><h3>Group Travel</h3><p>Ask about larger vehicles for events and group outings.</p></div></article>
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head"><div class="eyebrow">Travel Made Simple</div><h2>Our Services</h2><p>Travel options for your different plans.</p></div>
+    <div class="service-grid">
+      <article class="service"><div class="symbol">✈️</div><h3>Airport Transfers</h3><p>Plan pickup and drop-off trips to airports.</p></article>
+      <article class="service"><div class="symbol">🛣️</div><h3>Outstation Trips</h3><p>Arrange one-way and round-trip journeys.</p></article>
+      <article class="service"><div class="symbol">🛕</div><h3>Pilgrimage Tours</h3><p>Plan visits to Gujarat's famous temples.</p></article>
+      <article class="service"><div class="symbol">👨‍👩‍👧‍👦</div><h3>Family Travel</h3><p>Choose a vehicle suitable for your group.</p></article>
+      <article class="service"><div class="symbol">💼</div><h3>Business Travel</h3><p>Request transport for meetings and work trips.</p></article>
+      <article class="service"><div class="symbol">🚌</div><h3>Group Tours</h3><p>Ask about group vehicles for tours and events.</p></article>
+    </div>
   </div>
- </div>
 </section>
 
 <section class="destinations" id="destinations">
- <div class="container">
-  <div class="section-head"><div class="eyebrow">Discover Gujarat</div><h2>Places Worth <span>Exploring</span></h2><p class="intro">Choose a destination and contact us to discuss your route, travel dates and vehicle requirements.</p></div>
-  <div class="grid">
-   <article class="card"><img src="./ahmedabad-heritage.jpg" alt="Ahmedabad heritage architecture" loading="lazy"><div class="card-body"><h3>Ahmedabad</h3><p>Explore heritage architecture, city attractions and local culture.</p></div></article>
-   <article class="card"><img src="./somnath-temple.jpg" alt="Somnath Temple" loading="lazy"><div class="card-body"><h3>Somnath</h3><p>Visit the famous seaside temple and nearby attractions.</p></div></article>
-   <article class="card"><img src="./dwarka-temple.jpg" alt="Dwarka temple by the sea" loading="lazy"><div class="card-body"><h3>Dwarka</h3><p>Plan a spiritual getaway to Dwarkadhish Temple and the coast.</p></div></article>
-   <article class="card"><img src="./rann-of-kutch.jpg" alt="Rann of Kutch" loading="lazy"><div class="card-body"><h3>Rann of Kutch</h3><p>Discover the white desert, wide-open landscapes and local culture.</p></div></article>
-   <article class="card"><img src="./gir-forest.jpg" alt="Gir Forest lion" loading="lazy"><div class="card-body"><h3>Gir Region</h3><p>Plan a nature trip to the region known for Asiatic lions.</p></div></article>
-   <article class="card"><img src="./statue-of-unity.jpg" alt="Statue of Unity" loading="lazy"><div class="card-body"><h3>Statue of Unity</h3><p>Visit the iconic statue and attractions around Kevadia.</p></div></article>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Discover Gujarat</div>
+      <h2>Places Worth Exploring</h2>
+      <p>From seaside temples to historic cities and unforgettable landscapes.</p>
+    </div>
+    <div class="grid">
+      <article class="card"><img src="./somnath-temple.jpg" alt="Somnath Temple" loading="lazy"><div class="card-body"><h3>Somnath Temple</h3><p>Visit the iconic temple beside the Arabian Sea.</p><a class="btn" href="#booking" onclick="choosePlace('Somnath Temple')">Plan This Trip</a></div></article>
+      <article class="card"><img src="./dwarka-temple.jpg" alt="Dwarka Temple" loading="lazy"><div class="card-body"><h3>Dwarka</h3><p>Explore the famous pilgrimage city and its temples.</p><a class="btn" href="#booking" onclick="choosePlace('Dwarka')">Plan This Trip</a></div></article>
+      <article class="card"><img src="./gir-forest.jpg" alt="Gir Forest wildlife" loading="lazy"><div class="card-body"><h3>Gir Forest</h3><p>Discover the region known for Asiatic lions.</p><a class="btn" href="#booking" onclick="choosePlace('Gir Forest')">Plan This Trip</a></div></article>
+      <article class="card"><img src="./statue-of-unity.jpg" alt="Statue of Unity" loading="lazy"><div class="card-body"><h3>Statue of Unity</h3><p>Visit the famous monument near Kevadia.</p><a class="btn" href="#booking" onclick="choosePlace('Statue of Unity')">Plan This Trip</a></div></article>
+      <article class="card"><img src="./rann-of-kutch.jpg" alt="Rann of Kutch" loading="lazy"><div class="card-body"><h3>Rann of Kutch</h3><p>Experience the vast white salt desert landscape.</p><a class="btn" href="#booking" onclick="choosePlace('Rann of Kutch')">Plan This Trip</a></div></article>
+      <article class="card"><img src="./ahmedabad-heritage.jpg" alt="Ahmedabad heritage architecture" loading="lazy"><div class="card-body"><h3>Ahmedabad Heritage</h3><p>Explore historic architecture, culture and local food.</p><a class="btn" href="#booking" onclick="choosePlace('Ahmedabad Heritage')">Plan This Trip</a></div></article>
+    </div>
   </div>
- </div>
 </section>
 
-<section class="alt">
- <div class="container">
-  <div class="section-head"><div class="eyebrow">Simple Process</div><h2>How <span>Booking Works</span></h2><p class="intro">Send your trip details and discuss availability before confirming your ride.</p></div>
-  <div class="steps">
-   <div class="step"><b>1</b><h3>Choose a Vehicle</h3><p>Pick a car or group vehicle that suits your trip.</p></div>
-   <div class="step"><b>2</b><h3>Share Your Details</h3><p>Enter your pickup, destination, date and passenger count.</p></div>
-   <div class="step"><b>3</b><h3>Confirm on WhatsApp</h3><p>Discuss pricing and availability directly before confirming.</p></div>
+<section class="services">
+  <div class="container">
+    <div class="section-head"><div class="eyebrow">Simple Process</div><h2>How Booking Works</h2></div>
+    <div class="steps">
+      <div class="step"><b>01</b><h3>Choose a Vehicle</h3><p>Select a car or group vehicle for your trip.</p></div>
+      <div class="step"><b>02</b><h3>Share Your Details</h3><p>Enter your route, travel date and passenger count.</p></div>
+      <div class="step"><b>03</b><h3>Confirm on WhatsApp</h3><p>Send your request and confirm availability and fare directly.</p></div>
+    </div>
   </div>
- </div>
 </section>
 
-<section id="booking">
- <div class="container booking">
-  <div class="booking-copy">
-   <div class="eyebrow">Let's Plan Your Journey</div>
-   <h2>Book Your <span>Taxi Today</span></h2>
-   <p>Fill in the details and send your enquiry through WhatsApp. We can discuss your route, vehicle, pricing and availability.</p>
-   <p>✓ Flexible trip enquiries<br>✓ City and outstation journeys<br>✓ Family and group travel</p>
-   <a class="btn" href="https://wa.me/918469982615" target="_blank" rel="noopener">Chat on WhatsApp ↗</a>
+<section class="booking" id="booking">
+  <div class="container booking-box">
+    <div>
+      <div class="eyebrow">Let's Plan Your Journey</div>
+      <h2>Book Your Taxi</h2>
+      <p>Share your trip details and send a booking enquiry through WhatsApp.</p>
+      <p>✓ Vehicle options for different group sizes</p>
+      <p>✓ Local, airport and outstation enquiries</p>
+      <p>✓ Fare and availability confirmed directly</p>
+    </div>
+    <form id="bookingForm">
+      <label>Your Name<input id="name" required placeholder="Enter your name"></label>
+      <label>Phone Number<input id="phone" type="tel" required placeholder="Your contact number"></label>
+      <label>Pickup Location<input id="pickup" required placeholder="Pickup city or address"></label>
+      <label>Destination<input id="destination" required placeholder="Where are you going?"></label>
+      <label>Travel Date<input id="date" type="date" required></label>
+      <label>Vehicle<select id="vehicle"><option>Sedan</option><option>7-Seater SUV</option><option>Premium Car</option><option>Tempo Traveller / Urbania</option><option>Mini Bus</option></select></label>
+      <label class="full">Passengers<input id="passengers" type="number" min="1" max="100" value="2" required></label>
+      <label class="full">Extra Details<textarea id="notes" rows="3" placeholder="Return trip, luggage or other requests"></textarea></label>
+      <div class="full"><button class="btn" type="submit">Send Booking Enquiry on WhatsApp ↗</button></div>
+    </form>
   </div>
-  <form id="bookingForm">
-   <div class="fields">
-    <div><label for="name">Your Name *</label><input id="name" required placeholder="Enter your name"></div>
-    <div><label for="phone">Phone Number *</label><input id="phone" type="tel" required placeholder="Your contact number"></div>
-    <div><label for="pickup">Pickup Location *</label><input id="pickup" required placeholder="Where from?"></div>
-    <div><label for="destination">Destination *</label><input id="destination" required placeholder="Where to?"></div>
-    <div><label for="date">Travel Date *</label><input id="date" type="date" required></div>
-    <div><label for="vehicle">Choose Vehicle *</label><select id="vehicle" required><option value="">Select vehicle</option><option>Sedan</option><option>7-Seater SUV</option><option>Premium Car</option><option>Tempo Traveller / Urbania</option><option>Mini Bus</option><option>Custom Trip</option></select></div>
-    <div><label for="passengers">Passengers</label><select id="passengers"><option>1-2</option><option>3-4</option><option>5-7</option><option>8-12</option><option>13+</option></select></div>
-    <div><label for="trip">Trip Type</label><select id="trip"><option>One Way</option><option>Round Trip</option><option>Local</option><option>Multi-Day Tour</option></select></div>
-    <div class="full"><label for="message">Additional Details</label><textarea id="message" rows="3" placeholder="Return date, luggage or other requirements"></textarea></div>
-   </div>
-   <button class="btn" type="submit">Send Booking Enquiry on WhatsApp ↗</button>
-   <p style="color:#c1ccda;font-size:12px;margin-top:10px">This sends an enquiry only. Your ride is not confirmed until availability and terms are agreed.</p>
-  </form>
- </div>
-</section>
-
-<section class="alt">
- <div class="container faq">
-  <div class="section-head"><div class="eyebrow">Need Help?</div><h2>Frequently Asked <span>Questions</span></h2></div>
-  <details><summary>How do I book a taxi?</summary><p>Fill in the booking form and send your enquiry on WhatsApp. Discuss availability and pricing before confirming.</p></details>
-  <details><summary>Can I book an outstation trip?</summary><p>You can enquire about one-way, round-trip and multi-day journeys. Share your route and dates for details.</p></details>
-  <details><summary>Are vehicle prices shown on this website?</summary><p>Prices are not listed here. Contact us with your route and vehicle choice to discuss the fare.</p></details>
-  <details><summary>Can I request a tempo traveller or mini bus?</summary><p>Yes, select the vehicle in the form and send your passenger count and trip details.</p></details>
-  <details><summary>Is my booking automatically confirmed?</summary><p>No. WhatsApp sends your enquiry. Your booking is confirmed only after availability, fare and other details are agreed.</p></details>
- </div>
 </section>
 
 <section>
- <div class="container">
-  <div class="cta"><div><h2>Ready to Explore Gujarat?</h2><p>Tell us where you want to go. Let's plan your journey.</p></div><a class="btn" href="#booking">Plan Your Trip ↗</a></div>
- </div>
+  <div class="container">
+    <div class="section-head"><div class="eyebrow">Need to Know</div><h2>Frequently Asked Questions</h2></div>
+    <div class="faq">
+      <details><summary>How do I book a taxi?</summary><p>Fill in the booking form and send your enquiry through WhatsApp. Your booking is not confirmed until availability and details are agreed.</p></details>
+      <details><summary>Can I book an outstation trip?</summary><p>Yes, you can enquire about one-way and round-trip journeys across Gujarat and other destinations.</p></details>
+      <details><summary>How much does a taxi cost?</summary><p>Fare depends on the vehicle, route, distance, trip duration and other applicable charges. Request a quote before confirming.</p></details>
+      <details><summary>Can I enquire at any time?</summary><p>You can send a booking enquiry at any time. Actual response time and vehicle availability may vary.</p></details>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container cta">
+    <div class="eyebrow">Your Next Trip Starts Here</div>
+    <h2>Ready to Explore Gujarat?</h2>
+    <p class="muted">Choose your ride and send us your travel enquiry.</p>
+    <a class="btn" href="#booking">Plan Your Journey ↗</a>
+  </div>
 </section>
 </main>
 
 <footer>
- <div class="container footer-row">
-  <div><strong style="color:white">GUJARAT TAXI HUB</strong><br>Your Journey, Our Priority</div>
-  <div>Taxi booking enquiries across Gujarat</div>
-  <div>© <span id="year"></span> Gujarat Taxi Hub</div>
- </div>
+  <div class="container footer-row">
+    <div><strong>GUJARAT TAXI HUB</strong><br><small>Your Journey, Our Priority</small></div>
+    <div>Taxi booking enquiries · Gujarat, India</div>
+    <div>© <span id="year"></span> Gujarat Taxi Hub</div>
+  </div>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/918469982615" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">WhatsApp ↗</a>
+<a class="whatsapp" href="https://wa.me/918469982615" target="_blank" rel="noopener">WhatsApp ↗</a>
 
 <script>
-document.getElementById('year').textContent = new Date().getFullYear();
+const WA_NUMBER = "918469982615";
+document.getElementById("year").textContent = new Date().getFullYear();
 
-document.querySelectorAll('.choose').forEach(function(button){
- button.addEventListener('click',function(){
-  document.getElementById('vehicle').value = button.dataset.car;
- });
-});
+function chooseCar(car) {
+  document.getElementById("vehicle").value = car;
+}
+function choosePlace(place) {
+  document.getElementById("destination").value = place;
+}
+document.getElementById("bookingForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const value = id => document.getElementById(id).value.trim();
+  const message =
+`TAXI BOOKING ENQUIRY
+Name: ${value("name")}
+Phone: ${value("phone")}
+Pickup: ${value("pickup")}
+Destination: ${value("destination")}
+Travel Date: ${value("date")}
+Vehicle: ${value("vehicle")}
+Passengers: ${value("passengers")}
+Extra Details: ${value("notes") || "None"}
 
-document.getElementById('bookingForm').addEventListener('submit',function(event){
- event.preventDefault();
- const get = id => document.getElementById(id).value.trim();
- const text =
-  'GUJARAT TAXI HUB - BOOKING ENQUIRY%0A' +
-  'Name: ' + encodeURIComponent(get('name')) + '%0A' +
-  'Phone: ' + encodeURIComponent(get('phone')) + '%0A' +
-  'Pickup: ' + encodeURIComponent(get('pickup')) + '%0A' +
-  'Destination: ' + encodeURIComponent(get('destination')) + '%0A' +
-  'Date: ' + encodeURIComponent(get('date')) + '%0A' +
-  'Vehicle: ' + encodeURIComponent(get('vehicle')) + '%0A' +
-  'Passengers: ' + encodeURIComponent(get('passengers')) + '%0A' +
-  'Trip: ' + encodeURIComponent(get('trip')) + '%0A' +
-  'Additional details: ' + encodeURIComponent(get('message'));
- window.open('https://wa.me/918469982615?text=' + text,'_blank');
+Please confirm availability and fare.`;
+  window.open("https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(message), "_blank");
 });
 </script>
 </body>
